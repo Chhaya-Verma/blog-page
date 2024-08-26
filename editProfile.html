@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('_.jpeg');
+            padding: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .edit-container {
+            background-color: #5e436645;
+            box-shadow: 0 0 15px rgba(40, 31, 31, 0.503);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .edit-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .edit-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #444242;
+            font-weight: bold;
+        }
+
+        .edit-container input[type="text"],
+        .edit-container textarea,
+        .edit-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .edit-container button {
+            width: 100%;
+            padding: 10px;
+            background-color:  #6c2163;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-container button:hover {
+            background-color: #ba44c5;
+        }
+
+        .preview-image {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #dddddd;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="edit-container">
+        <h2>Edit Profile</h2>
+        <label for="profileImage">Profile Image:</label>
+        <input type="file" id="profileImage" accept="image/*" onchange="previewImage(event)">
+        <img src="unknown.jpg" alt="Preview Image" class="preview-image" id="previewImage">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" placeholder="Enter your name">
+        <label for="userLocation">Location:</label>
+        <input type="text" id="userLocation" placeholder="Enter your location">
+        <label for="userBio">Bio:</label>
+        <textarea id="userBio" rows="4" placeholder="Write a short bio..."></textarea>
+        <button onclick="saveChanges()">Save Changes</button>
+    </div>
+
+    <script>
+        function saveChanges() {
+            const userName = document.getElementById('userName').value;
+            const userLocation = document.getElementById('userLocation').value;
+            const userBio = document.getElementById('userBio').value;
+            const profileImage = document.getElementById('previewImage').src;
+
+            localStorage.setItem('userName', userName);
+            localStorage.setItem('userLocation', userLocation);
+            localStorage.setItem('userBio', userBio);
+            localStorage.setItem('profileImage', profileImage);
+
+            window.location.href = "userprofile.html";
+        }
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const previewImage = document.getElementById('previewImage');
+                previewImage.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+
+</html>

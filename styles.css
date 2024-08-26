@@ -1,0 +1,125 @@
+body {
+    background-image: url('2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-color: #604f4f5d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #5e3b685b;
+    box-shadow: 0 0 15px rgba(40, 31, 31, 0.503);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #117488;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #062d06;
+    font-family: cursive;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* #6c2163;
+    --theam2-color: #ba44c5; */
+button {
+    padding: 10px;
+    background-color: #6c2163;;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ba44c5;
+}
+
+.toggle {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.toggle span {
+    color: #0716e8;
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 200;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 70%;
+        margin: auto;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    .toggle span {
+        font-size: small;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    input {
+        padding: 6px;
+    }
+
+    button {
+        padding: 6px;
+    }
+
+    .toggle span {
+        font-size: smaller;
+    }
+}

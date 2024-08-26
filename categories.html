@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-image: url('_.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .container {
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #b31681;
+            text-shadow: 2px 2px #f2e9f1;
+        }
+
+        .tags {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tags button {
+            background-color: #f9f9f9;
+            border: 2px solid #b31681;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .tags button:hover {
+            background-color: #dcdcdc;
+        }
+
+        .tags button.selected {
+            background-color: #b31681;
+            border-color: #b31681;
+            color: #fff;
+        }
+
+        .continue {
+            background-color: #e7a415;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 60px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .continue.active {
+            background-color: #966c13;
+        }
+
+        .continue:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .tags {
+                grid-template-columns: repeat(2, auto);
+            }
+
+            .tags button {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .continue {
+                padding: 12px 50px;
+                font-size: 16px;
+            }
+            .container{
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tags {
+                grid-template-columns: repeat(2, auto);
+            }
+
+            .tags button {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .continue {
+                padding: 12px 40px;
+                font-size: 16px;
+            }
+           
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select Your Interests</h1>
+        <div class="tags">
+            <button>Data Visualization</button>
+            <button>Feminism</button>
+            <button>Equality</button>
+            <button>Freelancing</button>
+            <button>Climate Change</button>
+            <button>Bitcoin</button>
+            <button>iOS</button>
+            <button>Future</button>
+            <button>Cybersecurity</button>
+            <button>Nonfiction</button>
+            <button>True Crime</button>
+            <button>Web3</button>
+            <button>Java</button>
+            <button>Religion</button>
+            <button>Art</button>
+            <button>Family</button>
+            <button>Fiction</button>
+            <button>Kubernetes</button>
+            <button>Parenting</button>
+            <button>Travel</button>
+            <button>Venture Capital</button>
+            <button>Poetry</button>
+            <button>Food</button>
+            <button>Typescript</button>
+            <button>Language</button>
+            <button>Gaming</button>
+            <button>Space</button>
+            <button>Sports</button>
+            <button>Media</button>
+            <button>Docker</button>
+            <button>Race</button>
+            <button>Math</button>
+            <button>Photography</button>
+            <button>Music</button>
+            <button>Justice</button>
+            <button>Data Engineering</button>
+            <button>Film</button>
+            <button>Angular</button>
+        </div>
+        <button class="continue" disabled>Continue</button>
+    </div>
+
+    <script>
+        // Select all category buttons and the continue button
+        const buttons = document.querySelectorAll('.tags button');
+        const continueButton = document.querySelector('.continue');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle the 'selected' class on the clicked button
+                button.classList.toggle('selected');
+
+                // Check if any button has the 'selected' class and update 'Continue' button state
+                const anySelected = document.querySelectorAll('.tags button.selected').length > 0;
+                continueButton.classList.toggle('active', anySelected);
+                continueButton.disabled = !anySelected; // Enable the continue button only if a category is selected
+            });
+        });
+
+        // Add an event listener to the 'Continue' button
+        continueButton.addEventListener('click', () => {
+            // Check if the 'Continue' button is active
+            if (continueButton.classList.contains('active')) {
+                // Redirect to another page
+                window.location.href = 'blog.html'; // Replace with your desired URL
+            }
+        });
+    </script>
+</body>
+
+</html>

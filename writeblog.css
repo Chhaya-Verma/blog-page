@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('_.jpeg');
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+h1{
+    padding-top: 20px;
+    font-style: italic;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #a12e93;
+    text-shadow: 4px 4px white;
+    text-align: center;
+}
+h2, h3 {
+    color: #333;
+    font-weight: 300;
+}
+
+.form-container {
+    background-color: #5e436645;
+    box-shadow: 0 0 15px rgba(40, 31, 31, 0.503);
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#posts-container {
+    background-color: #5e436645;
+    box-shadow: 0 0 15px rgba(40, 31, 31, 0.503);
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.backBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.backBtn button {
+    background-color: #ac6dd6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.backBtn button:hover {
+    background-color: #555;
+}
+
+
+@media (max-width: 420px){
+    h1{
+        font-size: 20px;
+    }
+} 

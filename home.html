@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Blog Post</h1>
+        <form id="blogForm">
+            <h2>Hello <span id="userName"></span></h2>
+
+            <label for="editor">Write your blog:</label>
+            <textarea name="content" id="editor"></textarea>
+
+            <button type="submit">Post Blog</button>
+        </form>
+        <button id="backToHome">Back to Home Page</button>
+    </div>
+
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script src="create-blog.js"></script>
+</body>
+</html>
